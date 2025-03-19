@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin-top: -150px;
+    margin-bottom: 100px;
+}
+h1{
+    font-family: 'Phudu';
+    font-size: 80px;
+    color: #ccc;
+    font-weight: bold;
+}
+p{
+    font-family: 'Phudu';
+    font-size: 20px;
+    color: #ffff07;
+    font-weight: 400;
+}
+.animacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 100px;
+}
+i{
+    position: absolute;
+    color: #ffff07;
+    font-size: 100px;
+    margin-bottom: 100px;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+}
+.bi-laptop{
+    animation-name: laptop-animation;
+}
+@keyframes laptop-animation{
+    0%{ opacity: 1; transform: scale(0.8);}
+    20%{ opacity: 1; transform: scale(1);}
+    25%{opacity: 0; transform: scale(1.1); }
+}
+.bi-phone{
+    animation-name: phone-animation;
+}
+@keyframes phone-animation{
+    25%{opacity: 0; transform: scale(0.8);}
+    30%{opacity: 1;transform: scale(1);}
+    50%{opacity: 1;}
+    55%{opacity: 0;transform: scale(1.1);}
+}
+.bi-gear{
+    animation-name: gear-animation;
+}
+@keyframes gear-animation{
+    55%{opacity: 0;; transform: rotate(0deg)scale(0.8);}
+    57%{opacity: 1;; transform: rotate(0deg)scale(1);}
+    80%{opacity: 1;; transform: rotate(180deg);}
+    100%{opacity: 0;transform: rotate(360deg) scale(1.1);}
+}
+.botoes-links{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+}
+.btn-links{
+    list-style-type: none;
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+.btn-links li{
+    width: 80px;
+    height: 80px;
+
+    background-color: #ffff07;
+    box-shadow: 0px 8px 25px #87868684;
+    border-radius: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .2s;
+}
+.btn-links li:hover{
+    width: 200px;
+}
+.btn-links li .icon .bi-whatsapp{
+    color: #000;
+    font-size: 40px;
+    transition: .2s;
+    opacity: 1;
+    position: relative;
+}
+.btn-links li:hover .icon .bi-whatsapp{
+    opacity: 0;
+
+
+}
+.btn-links li .text{
+    color: #fff;
+    font-size: 20px;
+    font-family: 'phudu';
+    font-weight: 400;
+    position: absolute;
+    transform: scale(0);
+    transition: .2s;
+}
+.btn-links li:hover .text{
+    transform: scale(1);
+}
+.btn-links li::before{
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2), var(--cor3));
+    inset: 0;
+    opacity: 0;
+    transition: .2s;
+    border-radius: 60px;
+}
+.btn-links li:hover::before{
+    opacity: 1;
+}
+@media (max-width: 450px){
+    img{
+        width: 80px;
+        height: 80px;
+        margin-top: -100px;
+        margin-bottom: 80px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    p{
+        font-size: 10px;
+    }
+    i{
+        font-size: 50px;
+    }
+    .btn-links li{
+        width: 40px;
+        height: 40px;
+    }
+    .btn-links li:hover{
+        width: 100px;
+    }
+    .btn-links li .icon .bi-whatsapp{
+        font-size: 20px;
+    }
+    .btn-links li .text{
+        font-size: 10px;
+    }
+}
